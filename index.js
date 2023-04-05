@@ -56,6 +56,7 @@ const functions = [
 ];
 
 button.addEventListener('click', () => {
+
     if (input.value < 0) {
         input.value = '0';
         timer.innerHTML = '0';
