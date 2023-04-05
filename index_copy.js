@@ -1,7 +1,6 @@
 const input = document.getElementById('timeInput');
 const timer = document.getElementById('timeDisplay');
 const button = document.getElementById('timeButton');
-const label = document.getElementById('label');
 timer.innerHTML = '00:00:00';
 let interval;
 
@@ -30,19 +29,15 @@ function startTimer() {
     if (input.value > 0) {
         input.value--;
         button.textContent = 'Stop';
-        button.style.background = '#FB957B';
         timer.innerHTML = countdownTimer.format(input.value);
         clearInterval(interval)
         interval = setInterval(startTimer, 1000);
-        label.style.display = 'none';
     }
 }
 
 function stopTimer() {
     clearInterval(interval);
-    label.style.display = 'inline';
     button.textContent = 'Reset';
-    button.style.background = '#797BE8';
 }
 
 function resetTimer() {
@@ -50,8 +45,6 @@ function resetTimer() {
     timer.innerHTML = '00:00:00';
     input.value = '';
     button.textContent = 'Start';
-    label.style.display = 'inline';
-    button.style.background = '#797BE8';
 }
 
 let currentFunctionIndex = 0;
